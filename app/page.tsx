@@ -20,6 +20,7 @@ const publications = {
       venue: "IEEE MetroCon, 2025",
       authors:
         "S. S. H. Chakravarthula, A. Mitra, S. P. Mohanty, and E. Kougianos",
+      doi: "https://ieeexplore.ieee.org/document/11405771",
     },
     {
       title:
@@ -296,7 +297,7 @@ export default function Home() {
   return (
     <main>
       <nav className="nav">
-        <a className="brand" href="#home">Harsha.</a>
+        <a className="brand" href="#home">Sai Sri Harsha.</a>
         <div className="nav-links">
           <a href="#about">About</a>
           <a href="#research">Research</a>
@@ -353,14 +354,32 @@ export default function Home() {
             <p>GPA: 3.73/4.00</p>
             <p>Coursework included Artificial Intelligence, Machine Learning, Deep Learning, Software Engineering, Data Structures, Algorithms, Big Data, Feature Engineering, Data Visualization, and Empirical Analysis.</p>
           </article>
+
           <article className="card">
             <p className="card-label">Sep. 2015 – May 2019</p>
-            <h3>B.E. in Electronics and Communication Engineering</h3>
-            <p className="muted">Osmania University • Hyderabad, India</p>
-            <p>GPA: 3.6/4.0</p>
+            <h3>
+              Bachelor of Engineering in Electronics and Communication Engineering
+            </h3>
+            <p className="muted">
+              Matrusri Engineering College • Hyderabad, India
+            </p>
+            <p>
+              Osmania University
+            </p>
+            <p>
+              First with Distinction
+            </p>
+            <p>
+              <strong>Relevant Coursework:</strong> Programming in C & C++,
+              Computer Organization & Architecture, Data Communication & Computer
+              Networks, Digital Signal Processing, Microprocessors & Microcontrollers,
+              Embedded Systems, VLSI Design, Wireless Sensor Networks, Mobile &
+              Cellular Communication, Digital Communication, Automatic Control
+              Systems, and Verilog HDL.
+            </p>
           </article>
-        </div>
 
+        </div>
         <div className="subsection">
           <h3 className="subsection-title">Research Interests</h3>
           <div className="chips">
@@ -424,7 +443,7 @@ export default function Home() {
                 <p className="authors">{pub.authors}</p>
                 <p className="venue">{pub.venue}</p>
               </div>
-              {pub.doi && <a className="text-link" href={pub.doi} target="_blank" rel="noreferrer">DOI ↗</a>}
+              {pub.doi && <a className="text-link" href={pub.doi} target="_blank" rel="noreferrer">View Paper ↗</a>}
             </article>
           ))}
         </div>
@@ -575,8 +594,8 @@ export default function Home() {
       <section id="cv" className="section alt cv-section">
         <SectionTitle
           eyebrow="Curriculum Vitae"
-          title="Want the full academic record?"
-          description="View or download my complete CV."
+          title="Academic CV"
+          description="Explore my education, research, publications, teaching experience, professional background, technical skills, awards, and service."
         />
         <div className="hero-actions">
           <a className="button primary" href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noreferrer">View CV</a>
