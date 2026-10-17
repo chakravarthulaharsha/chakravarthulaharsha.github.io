@@ -86,83 +86,98 @@ const research = [
   {
     number: "01",
     title: "LLM Security & Trustworthy AI",
-    text: "Working on ways to verify LLM-generated outputs, detect tampering, and track their origin using cryptographic and tamper-evident methods.",
-    tags: ["LLM integrity", "Tamper detection", "Provenance"],
+    text: "I study ways to verify LLM-generated outputs, detect unauthorized changes, and maintain records of their origin. My work explores cryptographic methods and hardware-supported security to improve trust in AI-generated information.",
+    tags: ["LLM integrity", "Output verification", "Provenance"],
   },
   {
     number: "02",
     title: "Secure Edge AI & RAG Systems",
-    text: "Studying how to protect AI deployed on edge devices and exploring how retrieval-augmented generation (RAG) can help analyze security threats.",
-    tags: ["Edge AI", "RAG security", "Secure deployment"],
+    text: "I investigate security challenges in AI systems deployed on edge devices, where computing resources may be limited. I also explore how retrieval-augmented generation (RAG) can support security threat analysis in distributed environments.",
+    tags: ["Edge security", "Secure deployment", "RAG"],
   },
   {
     number: "03",
     title: "AI for Healthcare & IoMT",
-    text: "My healthcare research includes assistive devices, food–medication interaction screening, and anomaly detection in connected medical systems.",
-    tags: ["IoMT", "Healthcare AI", "Anomaly detection"],
+    text: "My healthcare research includes intelligent assistive devices, fall detection, and food–medication interaction screening. I work with machine-learning and connected-device approaches while considering reliability and security.",
+    tags: ["Healthcare AI", "IoMT", "Intelligent monitoring"],
   },
   {
     number: "04",
     title: "Hardware-Based Security",
-    text: "Investigating how physical unclonable functions (PUFs) can support device identity, authentication, and stronger security for edge and IoT systems.",
-    tags: ["PUFs", "Authentication", "Device integrity"],
+    text: "I explore physical unclonable functions (PUFs) and hardware-assisted techniques for device identification, authentication, and integrity protection in edge and IoT systems.",
+    tags: ["PUFs", "Device authentication", "Hardware trust"],
   },
 ];
 
 const projects = [
   {
     title: "LLMTrustChain",
-    kind: "Research framework",
+    kind: "LLM security",
     state: "Accepted paper",
-    description: "A hardware-rooted framework that uses cryptographic hashing and tamper-evident records to help verify LLM-generated outputs.",
-    tags: ["LLMs", "Blockchain", "Provenance"],
+    description: "A hardware-rooted framework that combines cryptographic hashing and tamper-evident records to verify the integrity and origin of LLM-generated outputs.",
+    tags: ["LLM integrity", "Blockchain", "Provenance"],
+  },
+  {
+    title: "EdgeShield-LLM",
+    kind: "Secure edge AI",
+    state: "Accepted paper",
+    description: "A framework for checking the integrity of LLM deployment files and software components in edge environments, helping identify unauthorized changes.",
+    tags: ["Edge AI", "Hardware-rooted trust", "Integrity"],
   },
   {
     title: "iMediFood-Shield",
-    kind: "Healthcare security",
+    kind: "Healthcare AI and security",
     state: "Published",
-    description: "An edge-AI framework that screens possible food–medication interactions and evaluates the uncertainty of its predictions.",
-    tags: ["Edge AI", "Healthcare", "ML"],
+    description: "An edge-AI framework for screening possible interactions between food and medications, with risk classifications and safeguards for uncertain results.",
+    tags: ["Edge AI", "Healthcare", "Food–medication safety"],
     link: "https://doi.org/10.3390/electronics15173799",
   },
   {
+    title: "cStick 2.0",
+    kind: "Assistive technology and IoMT",
+    state: "Published",
+    description: "A vision-enabled smart assistive system that uses edge and connected-device technologies for personalized fall prediction and detection.",
+    tags: ["Computer vision", "IoMT", "Assistive technology"],
+    link: "https://doi.org/10.3390/electronics15153375",
+  },
+  {
     title: "BlockShield",
-    kind: "Edge & systems security",
+    kind: "Connected-system security",
     state: "Ongoing research",
-    description: "Developing BlockShield to study blockchain-backed integrity checks and authentication for edge and connected systems.",
+    description: "Exploring blockchain-backed integrity checks, authentication, and trust mechanisms for edge and connected systems.",
     tags: ["Blockchain", "Integrity", "Edge security"],
   },
   {
     title: "PUF-Based Device Security",
     kind: "Hardware security",
     state: "Ongoing research",
-    description: "Investigating physical unclonable functions (PUFs) for device identification, key generation, and authentication.",
+    description: "Investigating physical unclonable functions (PUFs) for hardware identity, device authentication, and secure key generation in edge and IoT devices.",
     tags: ["PUFs", "Device identity", "Authentication"],
   },
   {
     title: "RAG-Based Edge Security",
-    kind: "AI systems",
+    kind: "AI systems security",
     state: "Ongoing research",
-    description: "Exploring how RAG can support the detection and analysis of security threats in distributed and resource-constrained edge systems.",
-    tags: ["RAG", "LLMs", "Edge"],
+    description: "Exploring how retrieval-augmented generation can help identify and analyze security threats in distributed and resource-constrained edge systems.",
+    tags: ["RAG", "Threat analysis", "Edge systems"],
   },
 ];
 
 const courses = [
-  { code: "CSCE 1010", name: "Introduction to Computer Science", term: "Spring & Fall 2026", text: "Programming fundamentals, debugging, labs, grading, and student support." },
-  { code: "CSCE 4010", name: "Social Issues in Computing", term: "Summer 2026", text: "Supporting students as they discuss ethical and social questions in computing." },
-  { code: "CSCE 4901", name: "Software Development Capstone I", term: "Spring 2026", text: "Helping senior students plan, build, document, and evaluate team projects." },
-  { code: "CSCE 3055", name: "IT Project Management", term: "Spring 2026", text: "Project planning, documentation, teamwork, and assessment support." },
-  { code: "CSCE 2100", name: "Foundations of Computing", term: "Fall 2025", text: "Algorithmic problem solving, computing concepts, and office hours." },
-  { code: "CSCE 5150", name: "Analysis of Computer Algorithms", term: "Fall 2024", text: "Graduate-level algorithm analysis, coursework, and student support." },
+  { code: "CSCE 1010", name: "Introduction to Computer Science", term: "Spring & Fall 2026", text: "Supported programming labs, debugging activities, grading, office hours, and individualized student assistance." },
+  { code: "CSCE 4010", name: "Social Issues in Computing", term: "Summer 2026", text: "Assisted with coursework on ethical, professional, and social issues in computing." },
+  { code: "CSCE 4901", name: "Software Development Capstone I", term: "Spring 2026", text: "Supported senior teams with project planning, implementation, documentation, milestones, and feedback." },
+  { code: "CSCE 3055", name: "IT Project Management", term: "Spring 2026", text: "Assisted with project planning, teamwork, documentation, and coursework assessment." },
+  { code: "CSCE 2100", name: "Foundations of Computing", term: "Fall 2025", text: "Helped students with fundamental computing concepts, algorithmic problem-solving, and coursework." },
+  { code: "CSCE 5150", name: "Analysis of Computer Algorithms", term: "Fall 2024", text: "Supported graduate-level algorithm analysis, problem-solving, assignments, and grading." },
 ];
 
 const experience = [
-  { role: "Doctoral Researcher", org: "University of North Texas", years: "2024 – Present", details: "Researching LLM integrity, security for edge and connected systems, healthcare AI, and hardware-rooted trust." },
-  { role: "Software Engineer", org: "Teksolve IT Solutions LLC", years: "Feb. – Aug. 2024", details: "Developed and maintained backend and full-stack applications using Java, JavaScript, Spring Boot, REST APIs, React, and databases." },
-  { role: "Peer Mentor & Data Assistant", org: "University of North Texas · HSCC", years: "2022 – 2024", details: "Mentored middle- and high-school students through outreach activities and supported application development and data analysis." },
-  { role: "Programmer Analyst", org: "Cognizant Technology Solutions", years: "Jan. 2020 – Dec. 2021", details: "Worked on enterprise software and databases, including backend development, API testing with SoapUI, and automation using Groovy." },
-  { role: "Systems Engineer", org: "Raster Technologies", years: "2019", details: "Developed application and automation scripts using Python, SQL, PL/SQL, and AutoLISP, and supported data-processing workflows." },
+  { role: "Doctoral Researcher", org: "University of North Texas", years: "Aug. 2024 – Present", details: "Researching cybersecurity and AI, including LLM-output integrity, secure edge computing, connected healthcare, and hardware-assisted security. My work includes building research frameworks, running experiments, and contributing to publications." },
+  { role: "Software Engineer", org: "Teksolve IT Solutions LLC", years: "Feb. – Aug. 2024", details: "Developed and maintained backend and full-stack software using Java, JavaScript, Spring Boot, REST APIs, React, and databases. Worked on feature development, debugging, and testing." },
+  { role: "Peer Mentor & Data Assistant", org: "University of North Texas · HSCC", years: "2022 – 2024", details: "Mentored middle- and high-school students through computing and college outreach. Also supported mobile and web development, data analysis, and reporting." },
+  { role: "Programmer Analyst", org: "Cognizant Technology Solutions", years: "Jan. 2020 – Dec. 2021", details: "Worked on enterprise applications, databases, and backend development, including API and service testing with SoapUI and scripting with Groovy." },
+  { role: "Systems Engineer", org: "Raster Technologies", years: "2019", details: "Developed applications and automation scripts using Python, SQL, PL/SQL, and AutoLISP, and supported data-processing and reporting workflows." },
 ];
 
 const navigation = ["About", "Research", "Publications", "Projects", "Teaching", "Experience", "Contact"];
@@ -213,15 +228,15 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="shell hero-grid">
             <div className="hero-content">
-              <p className="overline"><span className="tiny-dot" /> PH.D. STUDENT · CYBERSECURITY · AI</p>
+              <p className="overline"><span className="tiny-dot" /> PH.D. RESEARCHER · CYBERSECURITY · AI</p>
               <h1 id="hero-title">Sai Sri Harsha<br /><em>Chakravarthula</em></h1>
               <p className="hero-role">Ph.D. Student in Computer Science &amp; Engineering <span className="hero-role-divider">·</span> University of North Texas</p>
-              <p className="hero-description">I am a Ph.D. student at the University of North Texas, where I study cybersecurity in emerging systems. My work focuses on the security of large language models, edge AI, and connected healthcare technologies.</p>
+              <p className="hero-description">I am a Ph.D. student at the University of North Texas, specializing in cybersecurity in emerging systems. My research focuses on securing AI and connected technologies, with interests in large language models, trustworthy AI, edge computing, and healthcare systems.</p>
               <div className="hero-actions">
                 <a href="#research" className="btn btn-primary">Explore research <ArrowIcon /></a>
                 <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">View my CV <ArrowIcon diagonal /></a>
               </div>
-              <div className="hero-meta"><span>LLM Security</span><span className="meta-separator" /><span>Edge &amp; IoMT Security</span><span className="meta-separator" /><span>Healthcare AI</span></div>
+              <div className="hero-meta"><span>LLM Security</span><span className="meta-separator" /><span>Secure Edge AI</span><span className="meta-separator" /><span>Healthcare AI</span></div>
             </div>
             <div className="portrait-column">
               <div className="portrait-card">
@@ -234,17 +249,17 @@ export default function Home() {
               <div className="portrait-accent" aria-hidden="true"><span>RESEARCH · TEACHING · SERVICE</span><span>DENTON · TEXAS</span></div>
             </div>
           </div>
-          <div className="shell hero-bottom"><span>CYBERSECURITY · AI SECURITY · CONNECTED SYSTEMS</span><a href="#about">More about me <span aria-hidden="true">↓</span></a></div>
+          <div className="shell hero-bottom"><span>CYBERSECURITY · TRUSTWORTHY AI · SECURE SYSTEMS</span><a href="#about">More about me <span aria-hidden="true">↓</span></a></div>
         </section>
 
         <section className="section about-section" id="about">
           <div className="shell">
-            <SectionHeading number="01" label="ABOUT" title="From healthcare systems to AI security." />
+            <SectionHeading number="01" label="ABOUT" title="From intelligent healthcare to secure AI systems." />
             <div className="about-layout">
               <div className="about-story">
-                <p className="lead">My research combines cybersecurity and artificial intelligence, with an emphasis on connected healthcare and edge devices.</p>
-                <p>I started with smart healthcare devices and AI applications, including fall-detection systems and food–medication interaction screening. These projects led me to explore how to protect AI models, verify their outputs, and secure the devices that run them.</p>
-                <p>My current work includes LLM output verification, security for edge AI, retrieval-augmented generation (RAG) for threat analysis, and hardware-based device authentication. I also support computing courses and enjoy helping students work through problems step by step.</p>
+                <p className="lead">My research lies at the intersection of cybersecurity, artificial intelligence, and connected systems, particularly in healthcare and edge computing.</p>
+                <p>I began by working on AI-based healthcare applications, including smart assistive devices and food–medication interaction screening. These projects showed me that building intelligent systems also means making sure they are secure, reliable, and trustworthy.</p>
+                <p>Today, I study LLM-output verification, security for edge AI, retrieval-augmented generation (RAG) for threat analysis, and hardware-based authentication. Alongside my research, I enjoy teaching and helping students understand technical concepts through practical examples.</p>
                 <div className="about-links"><a href="mailto:saisriharshachakravarthula@gmail.com">Contact me <ArrowIcon diagonal /></a><a href="https://github.com/chakravarthulaharsha" target="_blank" rel="noopener noreferrer">GitHub profile <ArrowIcon diagonal /></a></div>
               </div>
               <div className="education-panel">
@@ -260,7 +275,7 @@ export default function Home() {
 
         <section className="section section-tinted" id="research">
           <div className="shell">
-            <SectionHeading number="02" label="RESEARCH" title="Research interests and current work." intro="I study how to protect AI models, verify their outputs, and improve security in edge and connected systems." />
+            <SectionHeading number="02" label="RESEARCH" title="Research interests." intro="My work focuses on practical ways to improve the integrity, authentication, and security of AI and connected systems." />
             <div className="research-grid">
               {research.map((area) => <article className="research-card" key={area.number}>
                 <div className="research-top"><span>{area.number} / RESEARCH AREA</span><span className="research-symbol">↗</span></div>
@@ -268,13 +283,13 @@ export default function Home() {
                 <div className="research-tags">{area.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </article>)}
             </div>
-            <div className="research-bottom"><span className="tiny-dot" /><p><strong>Current focus.</strong> Verifying AI outputs, securing edge deployments, and strengthening device authentication.</p></div>
+            <div className="research-bottom"><span className="tiny-dot" /><p><strong>Current direction.</strong> Developing practical security approaches for LLMs, AI-enabled edge devices, and connected systems.</p></div>
           </div>
         </section>
 
         <section className="section" id="publications">
           <div className="shell">
-            <SectionHeading number="03" label="PUBLICATIONS" title="Publications." intro="Journal and conference papers, organized by publication status." />
+            <SectionHeading number="03" label="PUBLICATIONS" title="Research publications." intro="My journal and conference papers span cybersecurity, AI, connected healthcare, and intelligent systems. Published and accepted work are shown separately." />
             <div className="pub-toolbar"><div className="pub-tabs" role="group" aria-label="Filter publications">
               {(["All", "Published", "Accepted"] as const).map((item) => <button key={item} type="button" aria-pressed={filter === item} className={filter === item ? "pub-tab active" : "pub-tab"} onClick={() => setFilter(item)}>{item}<span>{item === "All" ? publications.length : publications.filter(p => p.status === item).length}</span></button>)}
             </div><span className="pub-note">{visiblePublications.length} {visiblePublications.length === 1 ? "paper" : "papers"} shown</span></div>
@@ -285,13 +300,13 @@ export default function Home() {
                 {pub.link ? <a className="pub-link" href={pub.link} aria-label={`Open paper: ${pub.title}`} target="_blank" rel="noopener noreferrer"><ArrowIcon diagonal /></a> : <span className="pub-unlinked" aria-label="Paper link not yet added">—</span>}
               </article>)}
             </div>
-            <p className="publication-footnote">For full citations and additional details, see my <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer">curriculum vitae <ArrowIcon diagonal /></a>.</p>
+            <p className="publication-footnote">For my complete publication list and academic activities, please see my <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer">curriculum vitae <ArrowIcon diagonal /></a>.</p>
           </div>
         </section>
 
         <section className="section section-tinted" id="projects">
           <div className="shell">
-            <SectionHeading number="04" label="SELECTED PROJECTS" title="Selected research projects." intro="Published projects and ongoing work in AI, healthcare, and cybersecurity." />
+            <SectionHeading number="04" label="SELECTED PROJECTS" title="Selected research projects." intro="Examples of my published, accepted, and ongoing work in AI, cybersecurity, healthcare, and connected systems." />
             <div className="project-grid">
               {projects.map((project, index) => <article className="project-card" key={project.title}>
                 <div className="project-top"><span>PROJECT / {String(index + 1).padStart(2, "0")}</span><span className="project-status">{project.state}</span></div>
@@ -304,8 +319,8 @@ export default function Home() {
 
         <section className="section" id="teaching">
           <div className="shell">
-            <SectionHeading number="05" label="TEACHING" title="Teaching and student support." intro="As a graduate teaching assistant, I help students learn computing concepts through labs, debugging, office hours, and practical feedback." />
-            <div className="teaching-layout"><div className="teaching-intro"><span className="quote-mark" aria-hidden="true">“</span><p>I want students to understand why their code works, feel comfortable asking questions, and learn from mistakes as they practice.”</p><div className="teaching-note"><strong>Professional development</strong><span>Completed UNT’s SEED professional development program · Fall 2026</span></div></div>
+            <SectionHeading number="05" label="TEACHING" title="Teaching and mentoring." intro="I support students through hands-on labs, problem-solving, office hours, and clear feedback. My goal is to make technical concepts easier to understand and apply." />
+            <div className="teaching-layout"><div className="teaching-intro"><span className="quote-mark" aria-hidden="true">“</span><p>I want students to understand why something works, feel comfortable asking questions, and learn from mistakes as they practice.”</p><div className="teaching-note"><strong>Professional development</strong><span>Completed UNT’s SEED professional development program · Fall 2026</span></div></div>
               <div className="course-list">{courses.map(course => <article className="course" key={course.code}><span className="course-code">{course.code}</span><div><h3>{course.name}</h3><p>{course.text}</p></div><span className="course-term">{course.term}</span></article>)}</div>
             </div>
           </div>
@@ -313,7 +328,7 @@ export default function Home() {
 
         <section className="section section-tinted" id="experience">
           <div className="shell">
-            <SectionHeading number="06" label="EXPERIENCE & SERVICE" title="Research, education, and industry experience." />
+            <SectionHeading number="06" label="EXPERIENCE & SERVICE" title="Research, industry, and academic experience." intro="My work has included academic research, software development, teaching support, and student outreach." />
             <div className="experience-layout"><div className="experience-list">{experience.map(item => <article className="experience-item" key={item.role}><div className="experience-date">{item.years}</div><div><h3>{item.role}</h3><span>{item.org}</span><p>{item.details}</p></div></article>)}</div>
               <aside className="service-panel"><p className="panel-title">SERVICE & RECOGNITION</p><h3>Academic service and outreach.</h3><p>Served as a peer reviewer for SN Computer Science (Springer Nature), IFIP IoT, IEEE iSES, IEEE ISVLSI, and OCIT.</p><div className="service-divider" /><p>Mentored students through UNT’s HSCC outreach program and supported undergraduate and graduate computing courses as a teaching assistant.</p><div className="service-divider" /><p>Recognition includes the Mission Critical Award and Best Employee Award at Cognizant, and Employee of the Month through HSCC.</p></aside>
             </div>
@@ -321,7 +336,7 @@ export default function Home() {
         </section>
 
         <section className="contact-section" id="contact">
-          <div className="shell contact-layout"><div><p className="overline">07 / GET IN TOUCH</p><h2>Let’s connect and<br /><em>collaborate.</em></h2><p>I welcome opportunities to collaborate on research, teaching, and projects related to AI and cybersecurity.</p></div>
+          <div className="shell contact-layout"><div><p className="overline">07 / GET IN TOUCH</p><h2>Let’s connect and<br /><em>collaborate.</em></h2><p>I welcome opportunities to discuss research collaborations, teaching, and work related to cybersecurity and artificial intelligence. Feel free to reach out.</p></div>
             <div className="contact-actions"><a className="contact-email" href="mailto:saisriharshachakravarthula@gmail.com">saisriharshachakravarthula@gmail.com <ArrowIcon diagonal /></a><a href="https://github.com/chakravarthulaharsha" target="_blank" rel="noopener noreferrer">GitHub <ArrowIcon diagonal /></a><a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer">View Curriculum Vitae <ArrowIcon diagonal /></a></div>
           </div>
         </section>
