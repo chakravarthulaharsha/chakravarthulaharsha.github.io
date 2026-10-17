@@ -1,624 +1,324 @@
-const publications = {
-  published: [
-    {
-      title: "iMediFood-Shield: Secure Edge AI for Food and Medication Interaction Screening",
-      venue: "Electronics, vol. 15, 2026",
-      authors:
-        "S. S. H. Chakravarthula, I. D. Siripurapu, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
-      doi: "https://doi.org/10.3390/electronics15173799",
-    },
-    {
-      title:
-        "cStick 2.0: An IoMT-Edge Based Vision-Enabled Smart System for Personalized Fall Prediction and Detection",
-      venue: "Electronics, vol. 15, 2026",
-      authors:
-        "L. Rachakonda, S. S. H. Chakravarthula, S. P. Mohanty, and E. Kougianos",
-      doi: "https://doi.org/10.3390/electronics15153375",
-    },
-    {
-      title: "Deepfake Audio Detection: Differentiating Modulated and Deepfake Audio",
-      venue: "IEEE MetroCon, 2025",
-      authors:
-        "S. S. H. Chakravarthula, A. Mitra, S. P. Mohanty, and E. Kougianos",
-      doi: "https://ieeexplore.ieee.org/document/11405771",
-    },
-    {
-      title:
-        "Visiting Center Based Portable Emissary Approach for Data Gathering in Wireless Sensor Networks",
-      venue: "ICCMC, pp. 1023-1028, 2019",
-      authors:
-        "M. V. Naresh, A. Akshith, C. H. Sai Sri Harsha, and M. Sai Kumar",
-      doi: "https://doi.org/10.1109/ICCMC.2019.8819746",
-    },
-  ],
-  accepted: [
-    {
-      title:
-        "LLMTrustChain: A Hardware-Rooted Blockchain Framework for Tamper-Evident Verification of LLM Outputs",
-      venue: "IFIP IoT 2026",
-      authors:
-        "S. S. H. Chakravarthula, V. K. V. V. Bathalapalli, V. P. Yanambaka, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
-    },
-    {
-      title:
-        "EdgeShield-LLM: Hardware-Rooted Integrity Verification for Edge LLM Deployment Bundles",
-      venue: "ISVLSI 2026",
-      authors:
-        "S. S. H. Chakravarthula, V. P. Yanambaka, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
-    },
-    {
-      title: "SANDS: Security-Aware Anomaly Detection for IoMT Systems",
-      venue: "ISVLSI 2026",
-      authors:
-        "S. S. H. Chakravarthula, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
-    },
-    {
-      title:
-        "iMediFood-AI: Risk-Aware Dietary–Medication Interaction Prediction",
-      venue: "OCIT 2026",
-      authors:
-        "I. D. Siripurapu, S. S. H. Chakravarthula, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
-    },
-    {
-      title: "SideShield: Runtime Side-Channel Leakage Detection for Edge LLMs",
-      venue: "iSES 2026",
-      authors:
-        "S. S. H. Chakravarthula, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
-    },
-  ],
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+type Publication = {
+  title: string;
+  authors: string;
+  venue: string;
+  year: string;
+  status: "Published" | "Accepted";
+  link?: string;
 };
 
-const researchAreas = [
+const publications: Publication[] = [
   {
-    title: "AI & LLM Security",
-    body:
-      "Trustworthy and explainable AI, LLM integrity, tamper detection, provenance tracking, and secure deployment of intelligent systems.",
+    title: "iMediFood-Shield: Secure Edge AI for Food and Medication Interaction Screening",
+    authors: "S. S. H. Chakravarthula, I. D. Siripurapu, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
+    venue: "Electronics, vol. 15",
+    year: "2026",
+    status: "Published",
+    link: "https://doi.org/10.3390/electronics15173799",
   },
   {
-    title: "Secure Edge AI & RAG",
-    body:
-      "Security for distributed and resource-constrained edge systems, including RAG-based threat detection and mitigation.",
+    title: "cStick 2.0: An IoMT-Edge Based Vision-Enabled Smart System for Personalized Fall Prediction and Detection",
+    authors: "L. Rachakonda, S. S. H. Chakravarthula, S. P. Mohanty, and E. Kougianos",
+    venue: "Electronics, vol. 15",
+    year: "2026",
+    status: "Published",
+    link: "https://doi.org/10.3390/electronics15153375",
   },
   {
+    title: "Deepfake Audio Detection: Differentiating Modulated and Deepfake Audio",
+    authors: "S. S. H. Chakravarthula, A. Mitra, S. P. Mohanty, and E. Kougianos",
+    venue: "IEEE MetroCon",
+    year: "2025",
+    status: "Published",
+    link: "https://ieeexplore.ieee.org/document/11405771",
+  },
+  {
+    title: "Visiting Center Based Portable Emissary Approach for Data Gathering in Wireless Sensor Networks",
+    authors: "M. V. Naresh, A. Akshith, C. H. Sai Sri Harsha, and M. Sai Kumar",
+    venue: "ICCMC, pp. 1023–1028",
+    year: "2019",
+    status: "Published",
+    link: "https://doi.org/10.1109/ICCMC.2019.8819746",
+  },
+  {
+    title: "LLMTrustChain: A Hardware-Rooted Blockchain Framework for Tamper-Evident Verification of LLM Outputs",
+    authors: "S. S. H. Chakravarthula, V. K. V. V. Bathalapalli, V. P. Yanambaka, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
+    venue: "IFIP IoT",
+    year: "2026",
+    status: "Accepted",
+  },
+  {
+    title: "EdgeShield-LLM: Hardware-Rooted Integrity Verification for Edge LLM Deployment Bundles",
+    authors: "S. S. H. Chakravarthula, V. P. Yanambaka, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
+    venue: "IEEE ISVLSI",
+    year: "2026",
+    status: "Accepted",
+  },
+  {
+    title: "SANDS: Security-Aware Anomaly Detection for IoMT Systems",
+    authors: "S. S. H. Chakravarthula, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
+    venue: "IEEE ISVLSI",
+    year: "2026",
+    status: "Accepted",
+  },
+  {
+    title: "iMediFood-AI: Risk-Aware Dietary–Medication Interaction Prediction",
+    authors: "I. D. Siripurapu, S. S. H. Chakravarthula, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
+    venue: "OCIT (revision required)",
+    year: "2026",
+    status: "Accepted",
+  },
+  {
+    title: "SideShield: Runtime Side-Channel Leakage Detection for Edge LLMs",
+    authors: "S. S. H. Chakravarthula, L. Rachakonda, S. P. Mohanty, and E. Kougianos",
+    venue: "IEEE iSES",
+    year: "2026",
+    status: "Accepted",
+  },
+];
+
+const research = [
+  {
+    number: "01",
+    title: "Trustworthy AI & LLM Security",
+    text: "Building ways to verify AI-generated content, detect tampering, and make large language models more reliable.",
+    tags: ["LLM integrity", "Model security", "Provenance"],
+  },
+  {
+    number: "02",
+    title: "Edge & RAG Security",
+    text: "Protecting intelligent systems that run on edge devices, including secure model deployment and retrieval-augmented generation.",
+    tags: ["Edge AI", "RAG", "Secure deployment"],
+  },
+  {
+    number: "03",
     title: "Healthcare AI & IoMT",
-    body:
-      "Secure healthcare AI, food–medication interaction screening, intelligent risk prediction, IoMT systems, and anomaly detection.",
+    text: "Applying machine learning and practical security to connected healthcare, smart assistive devices, and risk screening.",
+    tags: ["IoMT", "Healthcare", "Anomaly detection"],
   },
   {
-    title: "Hardware-Rooted Trust",
-    body:
-      "PUF-based device authentication, hardware identity, key generation, blockchain-based provenance, and tamper-resistant security.",
+    number: "04",
+    title: "Hardware-Rooted Security",
+    text: "Exploring device identity, physical unclonable functions, and cryptographic methods that strengthen trust in connected systems.",
+    tags: ["PUF", "Authentication", "Integrity"],
   },
 ];
 
 const projects = [
   {
     title: "LLMTrustChain",
-    tag: "Trustworthy LLM Systems",
-    text:
-      "Developed a hardware-rooted framework for tamper-evident verification of LLM-generated outputs using cryptographic hashing, edge AI, and blockchain provenance.",
+    kind: "Research framework",
+    state: "Accepted research",
+    description: "A hardware-rooted approach to checking the integrity and origin of LLM-generated outputs using tamper-evident records.",
+    tags: ["LLMs", "Blockchain", "Provenance"],
   },
   {
     title: "iMediFood-Shield",
-    tag: "Healthcare AI",
-    text:
-      "Developed a secure edge-AI framework for food–medication interaction screening using machine learning, risk classification, and model evaluation.",
+    kind: "Healthcare security",
+    state: "Published",
+    description: "Secure edge-AI research for screening food–medication interactions and communicating risk responsibly.",
+    tags: ["Edge AI", "Healthcare", "ML"],
+    link: "https://doi.org/10.3390/electronics15173799",
   },
   {
-    title: "SANDS",
-    tag: "IoMT Security",
-    text:
-      "Developed machine-learning-based anomaly detection approaches for security monitoring in IoMT systems.",
+    title: "BlockShield & PUF Security",
+    kind: "Hardware & systems",
+    state: "Ongoing research",
+    description: "Investigating hardware identity, authentication, and tamper-resistant trust for emerging connected systems.",
+    tags: ["PUF", "Device trust", "Security"],
   },
   {
-    title: "Deepfake Audio Detection",
-    tag: "AI Security",
-    text:
-      "Applied machine learning, audio feature extraction, preprocessing, and classification techniques to distinguish manipulated and deepfake audio.",
+    title: "RAG & Edge Security",
+    kind: "AI systems",
+    state: "Ongoing research",
+    description: "Exploring how retrieval-augmented generation and edge intelligence can help identify and respond to security threats.",
+    tags: ["RAG", "LLMs", "Edge"],
   },
-  {
-    title: "Bank Churn Prediction",
-    tag: "Machine Learning",
-    text:
-      "Developed and evaluated machine-learning and neural-network models using Python, NumPy, Pandas, Scikit-learn, and TensorFlow, achieving approximately 95% classification accuracy.",
-  },
-  {
-    title: "Facial Recognition System",
-    tag: "Computer Vision",
-    text:
-      "Developed a real-time facial-recognition application using Python, Django, TensorFlow, GCP, and computer-vision technologies.",
-  },
+];
+
+const courses = [
+  { code: "CSCE 1010", name: "Introduction to Computer Science", term: "Spring & Fall 2026", text: "Programming fundamentals, debugging, labs, grading, and student support." },
+  { code: "CSCE 4010", name: "Social Issues in Computing", term: "Summer 2026", text: "Supporting students as they discuss ethical and social questions in computing." },
+  { code: "CSCE 4901", name: "Software Development Capstone I", term: "Spring 2026", text: "Helping senior students plan, build, document, and evaluate team projects." },
+  { code: "CSCE 3055", name: "IT Project Management", term: "Spring 2026", text: "Project planning, documentation, teamwork, and assessment support." },
+  { code: "CSCE 2100", name: "Foundations of Computing", term: "Fall 2025", text: "Algorithmic problem solving, computing concepts, and office hours." },
+  { code: "CSCE 5150", name: "Analysis of Computer Algorithms", term: "Fall 2024", text: "Graduate-level algorithm analysis, coursework, and student support." },
 ];
 
 const experience = [
-  {
-    role: "Doctoral Researcher",
-    org: "University of North Texas",
-    time: "Aug. 2024 – Present",
-    location: "Denton, TX",
-    bullets: [
-      "Research in artificial intelligence, machine learning, trustworthy LLM systems, secure edge computing, healthcare AI, and intelligent IoT/IoMT applications.",
-      "Develop AI and security frameworks involving LLM-output verification, anomaly detection, edge intelligence, cryptographic integrity mechanisms, blockchain-based provenance, and hardware-rooted trust.",
-      "Design and evaluate ML/DL models using Python, PyTorch, TensorFlow, Scikit-learn, NumPy, and Pandas.",
-      "Conduct data preprocessing, feature engineering, statistical analysis, model training, validation, and performance evaluation.",
-      "Investigate AI-driven healthcare applications including food–medication interaction screening, intelligent risk prediction, IoMT systems, and anomaly detection.",
-    ],
-  },
-  {
-    role: "Software Engineer",
-    org: "TEKSOLVE IT SOLUTIONS LLC",
-    time: "Feb. 2024 – Aug. 2024",
-    location: "Remote, United States",
-    bullets: [
-      "Developed and maintained backend and full-stack software components using Java, JavaScript, Node.js, Spring Boot, REST APIs, React, and database-driven systems.",
-      "Collaborated on software design, debugging, testing, feature implementation, and application maintenance.",
-    ],
-  },
-  {
-    role: "HSCC Peer Mentor / Data Assistant – Student Outreach Program",
-    org: "University of North Texas",
-    time: "2022 – 2024",
-    location: "Denton, TX",
-    bullets: [
-      "Supported middle-school and high-school students through academic and career-focused mentoring.",
-      "Visited local schools to explain academic pathways, course options, college preparation, and career-development opportunities.",
-      "Provided academic, technical, and professional mentoring and helped students connect course choices and technical skills to future goals.",
-      "Supported mobile and web development using Java, JavaScript, XML, Android Studio, and related technologies.",
-      "Assisted with student-data analysis and structured administrative workflows using Excel and Macros.",
-    ],
-  },
-  {
-    role: "Programmer Analyst",
-    org: "Cognizant Technology Solutions",
-    time: "Jan. 2020 – Dec. 2021",
-    location: "Chennai, India",
-    bullets: [
-      "Developed enterprise and backend software using Java, JavaScript, SQL, REST APIs, Oracle, AWS, and Microsoft Azure.",
-      "Worked with Oracle, MongoDB, Cassandra, and DynamoDB; developed PL/SQL procedures, packages, triggers, and views.",
-      "Supported automated builds and deployments using Git, Jenkins, Terraform, and CI/CD workflows.",
-      "Worked with Azure Web Apps, Azure Data Factory, Azure Data Lake, Grafana, and Prometheus.",
-    ],
-  },
-  {
-    role: "Systems Engineer",
-    org: "Raster Technologies",
-    time: "Jan. 2019 – Dec. 2019",
-    location: "Hyderabad, India",
-    bullets: [
-      "Developed applications and automation scripts using Python, SQL, PL/SQL, AutoLISP, HTML, CSS, and related technologies.",
-      "Worked with IRX and AutoLISP for engineering, automation, and technical application workflows.",
-      "Developed database procedures and automated data-processing, reporting, Excel Macros, and VBScript workflows.",
-    ],
-  },
+  { role: "Doctoral Researcher", org: "University of North Texas", years: "2024 – Present", details: "Researching trustworthy AI, LLM security, edge computing, secure healthcare systems, and hardware-rooted trust." },
+  { role: "Software Engineer", org: "Teksolve IT Solutions LLC", years: "2024", details: "Worked on backend and full-stack development, APIs, debugging, testing, and software maintenance." },
+  { role: "Peer Mentor & Data Assistant", org: "University of North Texas · HSCC", years: "2022 – 2024", details: "Mentored school students, supported educational outreach, and worked on technical and data tasks." },
+  { role: "Programmer Analyst", org: "Cognizant Technology Solutions", years: "2020 – 2021", details: "Developed enterprise software and database solutions, including API testing and Groovy-based automation." },
 ];
 
-const teaching = [
-  {
-    course: "CSCE 1010 – Introduction to Computer Science",
-    term: "Spring 2026: Sections 501, 551 • Fall 2026: Sections 501, 551, 552",
-    detail:
-      "Computational thinking, programming, algorithms, Python, problem solving, databases, networking, labs, debugging, grading, office hours, and individualized student support.",
-  },
-  {
-    course: "CSCE 4010 – Social Issues in Computing",
-    term: "Section 401 • Summer 2026",
-    detail:
-      "Ethical, professional, social, and societal issues in computing; grading and scheduled office hours.",
-  },
-  {
-    course: "CSCE 4901 – Software Development Capstone I",
-    term: "Section 502 • Spring 2026",
-    detail:
-      "Project planning, requirements analysis, implementation, documentation, teamwork, milestone tracking, and evaluation of individual and team deliverables.",
-  },
-  {
-    course: "CSCE 3055 – IT Project Management",
-    term: "Section 501 • Spring 2026",
-    detail:
-      "Project planning, software-project management, documentation, teamwork, grading, course administration, and assignment support.",
-  },
-  {
-    course: "CSCE 2100 – Foundations of Computing",
-    term: "Sections 003 and 004 • Fall 2025",
-    detail:
-      "Computing foundations, algorithmic problem solving, programming concepts, grading, office hours, and assignment support.",
-  },
-  {
-    course: "CSCE 5150 – Analysis of Computer Algorithms",
-    term: "Section 002 • Fall 2024",
-    detail:
-      "Graduate-level algorithm design, analysis, complexity, computational problem solving, assignments, grading, and student support.",
-  },
-];
+const navigation = ["About", "Research", "Publications", "Projects", "Teaching", "Experience", "Contact"];
 
-const skillGroups = [
-  {
-    title: "Programming",
-    items: ["Python", "Java", "C", "C++", "JavaScript", "SQL", "PL/SQL", "MATLAB", "AutoLISP", "BASH"],
-  },
-  {
-    title: "Deep Learning & AI",
-    items: ["Machine Learning", "Deep Learning", "Neural Networks", "CNNs", "LSTMs", "Transformers", "LLMs", "Computer Vision", "NLP", "Explainable AI", "Federated Learning"],
-  },
-  {
-    title: "Tools & ML Frameworks",
-    items: ["PyTorch", "TensorFlow", "Scikit-learn", "NumPy", "Pandas", "PySpark", "NLTK", "Matplotlib", "Jupyter", "Google Colab", "PyCharm", "Visual Studio Code", "Git", "IRX"],
-  },
-  {
-    title: "Software Development",
-    items: ["Django", "Spring Boot", "Node.js", "React", "REST APIs", "Agile/Scrum", "Debugging", "Testing", "Technical Documentation"],
-  },
-  {
-    title: "Databases & Cloud",
-    items: ["Oracle", "MySQL", "SQL Server", "MongoDB", "Cassandra", "DynamoDB", "AWS", "Microsoft Azure", "Google Cloud Platform"],
-  },
-  {
-    title: "DevOps & Systems",
-    items: ["Git", "Jenkins", "Terraform", "CI/CD", "Linux", "Edge Computing", "IoT", "IoMT"],
-  },
-  {
-    title: "Industrial Automation",
-    items: ["CNC Machine Operation", "CNC Programming", "PLC Programming", "PLC Control Logic", "Industrial Automation"],
-  },
-];
+function ArrowIcon({ diagonal = false }: { diagonal?: boolean }) {
+  return <span aria-hidden="true" className="arrow-icon">{diagonal ? "↗" : "→"}</span>;
+}
 
-const teachingInterests = [
-  "Introduction to Computer Science",
-  "Programming Fundamentals",
-  "Python",
-  "C/C++",
-  "Java",
-  "Data Structures",
-  "Algorithms",
-  "Artificial Intelligence",
-  "Machine Learning",
-  "Deep Learning",
-  "Software Engineering",
-  "Database Systems",
-  "IT Project Management",
-  "Cloud Computing",
-  "Cybersecurity",
-  "Social and Ethical Issues in Computing",
-  "Software Development Capstone",
-  "Project-Based Computing Courses",
-];
-
-function SectionTitle({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
+function SectionHeading({ number, label, title, intro }: { number: string; label: string; title: string; intro?: string }) {
   return (
     <div className="section-heading">
-      <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
-      {description && <p className="section-description">{description}</p>}
+      <div className="section-kicker"><span>{number}</span><span className="kicker-line" />{label}</div>
+      <div className="heading-row">
+        <h2>{title}</h2>
+        {intro && <p>{intro}</p>}
+      </div>
     </div>
   );
 }
 
 export default function Home() {
+  const [filter, setFilter] = useState<"All" | "Published" | "Accepted">("All");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const visiblePublications = publications.filter((p) => filter === "All" || p.status === filter);
+
   return (
-    <main>
-      <nav className="nav">
-        <a className="brand" href="#home">Sai Sri Harsha.</a>
-        <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#projects">Projects</a>
-          <a href="#teaching">Teaching</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <header className="site-header" id="top">
+        <div className="shell header-inner">
+          <a href="#top" className="brand" aria-label="Sai Sri Harsha Chakravarthula, homepage" onClick={() => setMenuOpen(false)}>
+            <span className="brand-mark">SH<span>.</span></span>
+            <span className="brand-text">Sai Sri Harsha <small>Chakravarthula</small></span>
+          </a>
+          <nav className={menuOpen ? "site-nav is-open" : "site-nav"} aria-label="Main navigation" id="site-navigation">
+            {navigation.map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)}>{item}</a>
+            ))}
+            <a className="nav-cv" href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>View CV <ArrowIcon diagonal /></a>
+          </nav>
+          <button type="button" className="menu-button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen(!menuOpen)}>
+            <span /> <span /> <span />
+          </button>
         </div>
-      </nav>
+      </header>
 
-      <section id="home" className="hero">
-        <div className="hero-inner">
-          <p className="eyebrow">Ph.D. Researcher • Cybersecurity • Artificial Intelligence</p>
-          <h1>
-            Sai Sri Harsha
-            <span>Chakravarthula</span>
-          </h1>
-          <p className="hero-copy">
-            Ph.D. researcher in Computer Science and Engineering at the University of North Texas,
-            focused on Cybersecurity in Emerging Systems, AI/ML security, secure edge AI, LLM security,
-            RAG-based edge security, cloud and IoT security, and trustworthy intelligent systems.
-          </p>
-          <div className="hero-actions">
-            <a className="button primary" href="#research">View Research</a>
-            <a className="button" href="#publications">Publications</a>
-            <a className="button" href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noreferrer">View CV</a>
-          </div>
-          <div className="hero-meta">
-            <span>Denton, Texas</span>
-            <a href="mailto:saisriharshachakravarthula@gmail.com">saisriharshachakravarthula@gmail.com</a>
-            <a href="https://github.com/chakravarthulaharsha" target="_blank" rel="noreferrer">GitHub: chakravarthulaharsha</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="section">
-        <SectionTitle
-          eyebrow="About"
-          title="Education & research profile"
-          description="An academic and technical profile spanning cybersecurity, artificial intelligence, software engineering, edge computing, cloud systems, and teaching."
-        />
-        <div className="education-grid">
-          <article className="card">
-            <p className="card-label">Aug. 2024 – Expected May 2027</p>
-            <h3>Ph.D. in Computer Science and Engineering</h3>
-            <p className="muted">University of North Texas • Denton, TX</p>
-            <p>Focus: Cybersecurity in Emerging Systems, AI/ML Security, Secure Edge AI, LLM Security, Cloud and IoT Security, and Advanced Algorithms.</p>
-          </article>
-          <article className="card">
-            <p className="card-label">Jan. 2022 – Dec. 2023</p>
-            <h3>M.S. in Artificial Intelligence</h3>
-            <p className="muted">University of North Texas • Denton, TX</p>
-            <p>GPA: 3.73/4.00</p>
-            <p>Coursework included Artificial Intelligence, Machine Learning, Deep Learning, Software Engineering, Data Structures, Algorithms, Big Data, Feature Engineering, Data Visualization, and Empirical Analysis.</p>
-          </article>
-
-          <article className="card">
-            <p className="card-label">Sep. 2015 – May 2019</p>
-            <h3>
-              Bachelor of Engineering in Electronics and Communication Engineering
-            </h3>
-            <p className="muted">
-              Matrusri Engineering College • Hyderabad, India
-            </p>
-            <p>
-              Osmania University
-            </p>
-            <p>
-              First with Distinction
-            </p>
-            <p>
-              <strong>Relevant Coursework:</strong> Programming in C & C++,
-              Computer Organization & Architecture, Data Communication & Computer
-              Networks, Digital Signal Processing, Microprocessors & Microcontrollers,
-              Embedded Systems, VLSI Design, Wireless Sensor Networks, Mobile &
-              Cellular Communication, Digital Communication, Automatic Control
-              Systems, and Verilog HDL.
-            </p>
-          </article>
-
-        </div>
-        <div className="subsection">
-          <h3 className="subsection-title">Research Interests</h3>
-          <div className="chips">
-            {[
-              "Artificial Intelligence", "Machine Learning", "Deep Learning", "Large Language Models",
-              "Trustworthy AI", "Explainable AI", "AI/ML Security", "Secure Edge AI",
-              "Internet of Medical Things", "Healthcare AI", "Computer Vision", "Anomaly Detection",
-              "Cloud Security", "IoT Security", "Privacy-Preserving AI", "Hardware-Rooted Trust",
-              "Intelligent Decision-Support Systems"
-            ].map((item) => <span className="chip" key={item}>{item}</span>)}
-          </div>
-        </div>
-      </section>
-
-      <section id="research" className="section alt">
-        <SectionTitle
-          eyebrow="Research"
-          title="Cybersecurity in Emerging Systems"
-          description="My research examines trust, integrity, privacy, and security across AI, LLM, edge, IoT/IoMT, and healthcare systems."
-        />
-        <div className="grid-4">
-          {researchAreas.map((item) => (
-            <article className="card" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="subsection">
-          <h3 className="subsection-title">Current & Ongoing Research</h3>
-          <div className="research-list">
-            <article className="card">
-              <h3>BlockShield</h3>
-              <p>Strengthening integrity, authentication, and trust in edge and emerging computing systems using blockchain and hardware-rooted security mechanisms.</p>
-            </article>
-            <article className="card">
-              <h3>PUF-Based Security</h3>
-              <p>Device authentication, hardware identity, key generation, and tamper-resistant protection of edge and IoT devices using Physical Unclonable Functions.</p>
-            </article>
-            <article className="card">
-              <h3>Edge LLM Security</h3>
-              <p>Integrity verification, secure deployment, provenance tracking, tamper detection, and protection of models and generated outputs in edge environments.</p>
-            </article>
-            <article className="card">
-              <h3>RAG-Based Edge Security</h3>
-              <p>Exploring retrieval-augmented generation for detection and mitigation of security threats in distributed and resource-constrained edge systems.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="publications" className="section">
-        <SectionTitle eyebrow="Scholarship" title="Publications" />
-        <h3 className="group-title">Published</h3>
-        <div className="publication-list">
-          {publications.published.map((pub) => (
-            <article className="publication" key={pub.title}>
-              <div>
-                <h3>{pub.title}</h3>
-                <p className="authors">{pub.authors}</p>
-                <p className="venue">{pub.venue}</p>
+      <main id="main">
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="shell hero-grid">
+            <div className="hero-content">
+              <p className="overline"><span className="tiny-dot" /> Ph.D. RESEARCHER · AI SECURITY · EDUCATOR</p>
+              <h1 id="hero-title">Sai Sri Harsha<br /><em>Chakravarthula.</em></h1>
+              <p className="hero-role">Cybersecurity in Emerging Systems <span className="hero-role-divider">/</span> University of North Texas</p>
+              <p className="hero-description">I&apos;m a Ph.D. researcher working at the intersection of cybersecurity and artificial intelligence. My research focuses on making LLMs, edge devices, and connected healthcare systems more secure, reliable, and trustworthy.</p>
+              <div className="hero-actions">
+                <a href="#research" className="btn btn-primary">Explore research <ArrowIcon /></a>
+                <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">View my CV <ArrowIcon diagonal /></a>
               </div>
-              {pub.doi && <a className="text-link" href={pub.doi} target="_blank" rel="noreferrer">View Paper ↗</a>}
-            </article>
-          ))}
-        </div>
-
-        <h3 className="group-title">Accepted</h3>
-        <div className="publication-list">
-          {publications.accepted.map((pub) => (
-            <article className="publication" key={pub.title}>
-              <div>
-                <h3>{pub.title}</h3>
-                <p className="authors">{pub.authors}</p>
-                <p className="venue">{pub.venue}</p>
-              </div>
-              <span className="status">Accepted</span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="projects" className="section alt">
-        <SectionTitle
-          eyebrow="Selected Work"
-          title="Research & technical projects"
-          description="Selected projects across trustworthy AI, healthcare AI, cybersecurity, machine learning, and computer vision."
-        />
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className="card project-card" key={project.title}>
-              <p className="card-label">{project.tag}</p>
-              <h3>{project.title}</h3>
-              <p>{project.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="teaching" className="section">
-        <SectionTitle
-          eyebrow="Teaching"
-          title="Teaching experience"
-          description="Graduate Teaching Assistant experience at the University of North Texas across introductory computing, algorithms, project management, social issues, and software capstone courses."
-        />
-        <div className="timeline">
-          {teaching.map((item) => (
-            <article className="timeline-item" key={item.course}>
-              <div className="timeline-dot" />
-              <div>
-                <h3>{item.course}</h3>
-                <p className="venue">{item.term}</p>
-                <p>{item.detail}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="subsection">
-          <h3 className="subsection-title">Teaching Interests</h3>
-          <div className="chips">
-            {teachingInterests.map((item) => <span className="chip" key={item}>{item}</span>)}
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" className="section alt">
-        <SectionTitle eyebrow="Experience" title="Professional & research experience" />
-        <div className="experience-list">
-          {experience.map((item) => (
-            <article className="experience-card" key={`${item.role}-${item.org}`}>
-              <div className="experience-head">
-                <div>
-                  <h3>{item.role}</h3>
-                  <p className="venue">{item.org} • {item.location}</p>
-                </div>
-                <span className="card-label">{item.time}</span>
-              </div>
-              <ul>
-                {item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="skills" className="section">
-        <SectionTitle eyebrow="Technical Profile" title="Skills" />
-        <div className="skills-grid">
-          {skillGroups.map((group) => (
-            <article className="card" key={group.title}>
-              <h3>{group.title}</h3>
-              <div className="chips">
-                {group.items.map((item) => <span className="chip" key={item}>{item}</span>)}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="internship" className="section alt">
-        <SectionTitle eyebrow="Industry Training" title="Internship" />
-        <article className="experience-card">
-          <div className="experience-head">
-            <div>
-              <h3>Engineering Intern / CNC & PLC Technical Trainee</h3>
-              <p className="venue">Bharat Heavy Electricals Limited (BHEL) • Hyderabad, India</p>
+              <div className="hero-meta"><span>Research</span><span className="meta-separator" /><span>Teaching</span><span className="meta-separator" /><span>Real-world impact</span></div>
             </div>
-            <span className="card-label">Undergraduate Internship</span>
+            <div className="portrait-column">
+              <div className="portrait-card">
+                <div className="portrait-photo">
+                  <Image className="portrait-image" src="/harsha-profile.webp" width={525} height={711} priority alt="Sai Sri Harsha Chakravarthula smiling in a light gray suit and black tie" />
+                  <span className="portrait-corner-badge">UNT <span>·</span> CSE</span>
+                </div>
+                <div className="portrait-caption"><div><span className="portrait-label">RESEARCHER / ENGINEER / EDUCATOR</span><strong>Sai Sri Harsha Chakravarthula</strong><small>University of North Texas · Denton, TX</small></div><span className="portrait-star" aria-hidden="true">✳</span></div>
+              </div>
+              <div className="portrait-accent" aria-hidden="true"><span>RESEARCH ROOTED IN TRUST</span><span>01 / 04</span></div>
+            </div>
           </div>
-          <ul>
-            <li>Completed hands-on technical training involving Computer Numerical Control machines and Programmable Logic Controllers.</li>
-            <li>Worked with CNC programming and operation and gained practical exposure to automated manufacturing and machine-control processes.</li>
-            <li>Gained hands-on experience with PLC programming, control logic, and PLC-based industrial systems.</li>
-            <li>Developed practical understanding of programmed control systems used to operate and automate industrial machinery.</li>
-          </ul>
-        </article>
-      </section>
+          <div className="shell hero-bottom"><span>CYBERSECURITY · TRUSTWORTHY AI · SECURE EDGE SYSTEMS</span><a href="#about">More about me <span aria-hidden="true">↓</span></a></div>
+        </section>
 
-      <section id="recognition" className="section">
-        <SectionTitle eyebrow="Recognition" title="Awards, development & leadership" />
-        <div className="recognition-grid">
-          <article className="card">
-            <h3>Awards & Honors</h3>
-            <ul className="plain-list">
-              <li>Mission Critical Award — Cognizant Technology Solutions</li>
-              <li>Best Employee Award — Cognizant Technology Solutions</li>
-              <li>Employee of the Month — HSCC Peer Mentor / Data Assistant, University of North Texas</li>
-            </ul>
-          </article>
-          <article className="card">
-            <h3>Professional Development & Memberships</h3>
-            <ul className="plain-list">
-              <li>UNT SEED Program Participant — Fall 2026</li>
-              <li>Certified International Teaching Assistant (ITA) — Spring 2026</li>
-              <li>IEEE Student Member</li>
-              <li>IEEE Young Professionals Member</li>
-            </ul>
-          </article>
-          <article className="card">
-            <h3>Leadership & Service</h3>
-            <ul className="plain-list">
-              <li>Team Leadership — Cognizant Technology Solutions</li>
-              <li>Team Leadership — HSCC Peer Mentor / Data Assistant Program, University of North Texas</li>
-              <li>Student Mentoring and Outreach — University of North Texas</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+        <section className="section about-section" id="about">
+          <div className="shell">
+            <SectionHeading number="01" label="ABOUT" title="Research built on curiosity.\nGrounded in real problems." />
+            <div className="about-layout">
+              <div className="about-story">
+                <p className="lead">My work sits at the intersection of cybersecurity, artificial intelligence, and the systems people rely on every day.</p>
+                <p>I started by working on intelligent healthcare systems. That experience led me toward a broader question: how do we make AI and connected devices more secure, trustworthy, and practical outside the lab?</p>
+                <p>Today, my research spans secure edge AI, hardware-based trust, LLM security, and RAG/edge security. I also enjoy teaching and helping students approach difficult technical problems one step at a time.</p>
+                <div className="about-links"><a href="mailto:saisriharshachakravarthula@gmail.com">Get in touch <ArrowIcon diagonal /></a><a href="https://github.com/chakravarthulaharsha" target="_blank" rel="noopener noreferrer">GitHub profile <ArrowIcon diagonal /></a></div>
+              </div>
+              <div className="education-panel">
+                <p className="panel-title">ACADEMIC BACKGROUND</p>
+                <div className="degree"><span className="degree-year">2024 — 2027 (expected)</span><h3>Ph.D., Computer Science & Engineering</h3><p>University of North Texas</p></div>
+                <div className="degree"><span className="degree-year">2022 — 2023</span><h3>M.S., Artificial Intelligence</h3><p>University of North Texas</p></div>
+                <div className="degree"><span className="degree-year">2015 — 2019</span><h3>B.E., Electronics & Communication Engineering</h3><p>Matrusri Engineering College · Osmania University</p></div>
+                <div className="panel-footnote">Doctoral research focus: Cybersecurity in Emerging Systems</div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <section id="cv" className="section alt cv-section">
-        <SectionTitle
-          eyebrow="Curriculum Vitae"
-          title="Academic CV"
-          description="Explore my education, research, publications, teaching experience, professional background, technical skills, awards, and service."
-        />
-        <div className="hero-actions">
-          <a className="button primary" href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noreferrer">View CV</a>
-          <a className="button" href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" download>Download CV</a>
-        </div>
-      </section>
+        <section className="section section-tinted" id="research">
+          <div className="shell">
+            <SectionHeading number="02" label="RESEARCH" title="Making intelligent systems\nmore trustworthy." intro="Four connected directions guide my work, from secure AI models to the devices and environments where they run." />
+            <div className="research-grid">
+              {research.map((area) => <article className="research-card" key={area.number}>
+                <div className="research-top"><span>{area.number} / RESEARCH AREA</span><span className="research-symbol">↗</span></div>
+                <h3>{area.title}</h3><p>{area.text}</p>
+                <div className="research-tags">{area.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              </article>)}
+            </div>
+            <div className="research-bottom"><span className="tiny-dot" /><p><strong>Current direction.</strong> Building practical ways to verify AI outputs, protect edge deployments, and strengthen trust from hardware to application.</p></div>
+          </div>
+        </section>
 
-      <section id="contact" className="section contact-section">
-        <SectionTitle eyebrow="Contact" title="Let’s connect" />
-        <p className="contact-copy">
-          I am open to conversations around research, academic opportunities, AI/ML engineering,
-          cybersecurity, and collaborative projects.
-        </p>
-        <div className="contact-links">
-          <a href="mailto:saisriharshachakravarthula@gmail.com">Email</a>
-          <a href="https://github.com/chakravarthulaharsha" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noreferrer">CV</a>
-        </div>
-      </section>
+        <section className="section" id="publications">
+          <div className="shell">
+            <SectionHeading number="03" label="PUBLICATIONS" title="Selected scholarly work." intro="A selection of published and accepted work. Publication status is kept visible for clarity." />
+            <div className="pub-toolbar"><div className="pub-tabs" role="group" aria-label="Filter publications">
+              {(["All", "Published", "Accepted"] as const).map((item) => <button key={item} type="button" aria-pressed={filter === item} className={filter === item ? "pub-tab active" : "pub-tab"} onClick={() => setFilter(item)}>{item}<span>{item === "All" ? publications.length : publications.filter(p => p.status === item).length}</span></button>)}
+            </div><span className="pub-note">{visiblePublications.length} {visiblePublications.length === 1 ? "paper" : "papers"} shown</span></div>
+            <div className="publication-list">
+              {visiblePublications.map((pub, index) => <article className="publication-item" key={pub.title}>
+                <span className="pub-index">{String(index + 1).padStart(2, "0")}</span>
+                <div className="pub-details"><div className="pub-status-line"><span className={pub.status === "Published" ? "pub-status published" : "pub-status"}>{pub.status}</span><span>{pub.year}</span></div><h3>{pub.title}</h3><p className="pub-authors">{pub.authors}</p><p className="pub-venue">{pub.venue}</p></div>
+                {pub.link ? <a className="pub-link" href={pub.link} aria-label={`Open paper: ${pub.title}`} target="_blank" rel="noopener noreferrer"><ArrowIcon diagonal /></a> : <span className="pub-unlinked" aria-label="Paper link not yet added">—</span>}
+              </article>)}
+            </div>
+            <p className="publication-footnote">For the full, most up-to-date publication record, please see my <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer">curriculum vitae <ArrowIcon diagonal /></a>.</p>
+          </div>
+        </section>
 
-      <footer>
-        <p>© 2026 Sai Sri Harsha Chakravarthula. Built with Next.js.</p>
-      </footer>
-    </main>
+        <section className="section section-tinted" id="projects">
+          <div className="shell">
+            <SectionHeading number="04" label="SELECTED PROJECTS" title="Research in practice." intro="A closer look at a few research projects, including work currently in progress." />
+            <div className="project-grid">
+              {projects.map((project, index) => <article className="project-card" key={project.title}>
+                <div className="project-top"><span>PROJECT / {String(index + 1).padStart(2, "0")}</span><span className="project-status">{project.state}</span></div>
+                <div className="project-body"><span className="project-type">{project.kind}</span><h3>{project.title}</h3><p>{project.description}</p></div>
+                <div className="project-bottom"><div className="project-tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>{project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`Read ${project.title} paper`}>↗</a>}</div>
+              </article>)}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="teaching">
+          <div className="shell">
+            <SectionHeading number="05" label="TEACHING" title="Helping students learn\nto solve the next problem." intro="Teaching is an important part of my academic work. I focus on clear explanations, approachable feedback, and hands-on practice." />
+            <div className="teaching-layout"><div className="teaching-intro"><span className="quote-mark">“</span><p>I want students to understand not just what works, but why it works — and feel comfortable trying again when it doesn’t.</p><div className="teaching-note"><strong>Professional development</strong><span>Completed UNT’s SEED teaching development program · Fall 2026</span></div></div>
+              <div className="course-list">{courses.map(course => <article className="course" key={course.code}><span className="course-code">{course.code}</span><div><h3>{course.name}</h3><p>{course.text}</p></div><span className="course-term">{course.term}</span></article>)}</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-tinted" id="experience">
+          <div className="shell">
+            <SectionHeading number="06" label="EXPERIENCE & SERVICE" title="A background across\nresearch and industry." />
+            <div className="experience-layout"><div className="experience-list">{experience.map(item => <article className="experience-item" key={item.role}><div className="experience-date">{item.years}</div><div><h3>{item.role}</h3><span>{item.org}</span><p>{item.details}</p></div></article>)}</div>
+              <aside className="service-panel"><p className="panel-title">SERVICE & RECOGNITION</p><h3>Beyond research.</h3><p>Peer reviewer for journals and conferences including SN Computer Science, IFIP IoT, IEEE iSES, IEEE ISVLSI, and OCIT.</p><div className="service-divider" /><p>Student outreach and mentoring through UNT’s HSCC program, along with teaching support across undergraduate and graduate computing courses.</p><div className="service-divider" /><p>Recognition includes the Mission Critical Award at Cognizant and Employee of the Month through HSCC.</p></aside>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact-section" id="contact">
+          <div className="shell contact-layout"><div><p className="overline">07 / GET IN TOUCH</p><h2>Let’s work on what<br /><em>comes next.</em></h2><p>I’m open to research collaborations, academic conversations, and opportunities where trustworthy AI and cybersecurity can make a meaningful difference.</p></div>
+            <div className="contact-actions"><a className="contact-email" href="mailto:saisriharshachakravarthula@gmail.com">saisriharshachakravarthula@gmail.com <ArrowIcon diagonal /></a><a href="https://github.com/chakravarthulaharsha" target="_blank" rel="noopener noreferrer">GitHub <ArrowIcon diagonal /></a><a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer">View Curriculum Vitae <ArrowIcon diagonal /></a></div>
+          </div>
+        </section>
+      </main>
+      <footer className="footer"><div className="shell footer-inner"><span>© 2026 Sai Sri Harsha Chakravarthula</span><span>Designed for clarity, curiosity, and trust.</span><a href="#top">Back to top ↑</a></div></footer>
+    </>
   );
 }
