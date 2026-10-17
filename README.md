@@ -1,10 +1,10 @@
 # Academic Portfolio — Sai Sri Harsha Chakravarthula
 
-This is a **complete** Next.js website adapted from your uploaded `harsha-portfolio` repository. It includes the new light academic design, your portrait, your CV PDF, the existing publishing workflow, and the project files. No Git history or dependency folders are included in this ZIP.
+This is a **complete** Next.js website adapted from your uploaded `harsha-portfolio` repository. This version improves the homepage, research, publication, teaching, experience, and contact wording. It preserves the light academic design, your portrait, CV PDF, existing publishing workflow, and other project files. Read `WORDING_UPDATES.md` for the detailed list of corrections. No Git history or dependency folders are included in this ZIP.
 
 ## Fastest way to update your EXISTING GitHub website
 
-1. Download and **extract** `Harsha_Academic_Portfolio_Ready_for_GitHub.zip` on your computer.
+1. Download and **extract** `Harsha_Academic_Portfolio_Wording_Updated.zip` on your computer.
 2. Open your original local Git repository folder (`harsha-portfolio`) on your computer (the one you used previously for `git push`).
 3. Copy **everything inside the extracted ZIP** into that original repository folder, merging and replacing the existing files. **Keep the old hidden `.git` folder** so that it stays connected to your repository. The hidden `.github` folder from this ZIP must also be copied.
 4. Open a terminal in your original repository folder and run:
@@ -13,7 +13,7 @@ This is a **complete** Next.js website adapted from your uploaded `harsha-portfo
    npm install
    npm run build
    git add -A
-   git commit -m "Refresh academic portfolio and add profile photo"
+   git commit -m "Improve academic portfolio wording"
    git push origin main
    ```
 
