@@ -86,25 +86,25 @@ const research = [
   {
     number: "01",
     title: "LLM Security & Trustworthy AI",
-    text: "Studying how to verify LLM-generated outputs, detect unauthorized changes, and maintain trustworthy records of their origin.",
+    text: "Working on ways to verify LLM-generated outputs, detect tampering, and track their origin using cryptographic and tamper-evident methods.",
     tags: ["LLM integrity", "Tamper detection", "Provenance"],
   },
   {
     number: "02",
     title: "Secure Edge AI & RAG Systems",
-    text: "Studying secure AI deployment on edge devices and the use of retrieval-augmented generation (RAG) to analyze security threats in distributed systems.",
+    text: "Studying how to protect AI deployed on edge devices and exploring how retrieval-augmented generation (RAG) can help analyze security threats.",
     tags: ["Edge AI", "RAG security", "Secure deployment"],
   },
   {
     number: "03",
     title: "AI for Healthcare & IoMT",
-    text: "Developing and evaluating machine-learning approaches for assistive healthcare devices, food–medication interaction screening, and security monitoring in connected medical systems.",
+    text: "My healthcare research includes assistive devices, food–medication interaction screening, and anomaly detection in connected medical systems.",
     tags: ["IoMT", "Healthcare AI", "Anomaly detection"],
   },
   {
     number: "04",
     title: "Hardware-Based Security",
-    text: "Investigating physical unclonable functions (PUFs), device authentication, and hardware-backed methods for protecting connected systems.",
+    text: "Investigating how physical unclonable functions (PUFs) can support device identity, authentication, and stronger security for edge and IoT systems.",
     tags: ["PUFs", "Authentication", "Device integrity"],
   },
 ];
@@ -114,29 +114,36 @@ const projects = [
     title: "LLMTrustChain",
     kind: "Research framework",
     state: "Accepted paper",
-    description: "A research framework for verifying LLM outputs using cryptographic hashing, hardware-rooted trust, and tamper-evident records.",
+    description: "A hardware-rooted framework that uses cryptographic hashing and tamper-evident records to help verify LLM-generated outputs.",
     tags: ["LLMs", "Blockchain", "Provenance"],
   },
   {
     title: "iMediFood-Shield",
     kind: "Healthcare security",
     state: "Published",
-    description: "A secure edge-AI framework for screening food–medication interactions and reporting risk classifications with appropriate caution.",
+    description: "An edge-AI framework that screens possible food–medication interactions and evaluates the uncertainty of its predictions.",
     tags: ["Edge AI", "Healthcare", "ML"],
     link: "https://doi.org/10.3390/electronics15173799",
   },
   {
-    title: "BlockShield & PUF Research",
-    kind: "Hardware & systems",
+    title: "BlockShield",
+    kind: "Edge & systems security",
     state: "Ongoing research",
-    description: "Ongoing work on BlockShield and physical unclonable functions, with a focus on device identity, authentication, and system integrity.",
-    tags: ["PUF", "Device trust", "Security"],
+    description: "Developing BlockShield to study blockchain-backed integrity checks and authentication for edge and connected systems.",
+    tags: ["Blockchain", "Integrity", "Edge security"],
+  },
+  {
+    title: "PUF-Based Device Security",
+    kind: "Hardware security",
+    state: "Ongoing research",
+    description: "Investigating physical unclonable functions (PUFs) for device identification, key generation, and authentication.",
+    tags: ["PUFs", "Device identity", "Authentication"],
   },
   {
     title: "RAG-Based Edge Security",
     kind: "AI systems",
     state: "Ongoing research",
-    description: "Exploring how retrieval-augmented generation can support security-threat detection and analysis in distributed and resource-constrained edge systems.",
+    description: "Exploring how RAG can support the detection and analysis of security threats in distributed and resource-constrained edge systems.",
     tags: ["RAG", "LLMs", "Edge"],
   },
 ];
@@ -151,10 +158,11 @@ const courses = [
 ];
 
 const experience = [
-  { role: "Doctoral Researcher", org: "University of North Texas", years: "2024 – Present", details: "Conducting research in AI and cybersecurity, with projects in LLM integrity, secure edge computing, healthcare AI, and hardware-based trust." },
-  { role: "Software Engineer", org: "Teksolve IT Solutions LLC", years: "2024", details: "Developed and maintained backend and full-stack applications, including API development, debugging, testing, and software support." },
-  { role: "Peer Mentor & Data Assistant", org: "University of North Texas · HSCC", years: "2022 – 2024", details: "Supported middle- and high-school outreach, student mentoring, application development, and data analysis." },
-  { role: "Programmer Analyst", org: "Cognizant Technology Solutions", years: "2020 – 2021", details: "Worked on enterprise and backend software, databases, API testing, and automation using SoapUI and Groovy." },
+  { role: "Doctoral Researcher", org: "University of North Texas", years: "2024 – Present", details: "Researching LLM integrity, security for edge and connected systems, healthcare AI, and hardware-rooted trust." },
+  { role: "Software Engineer", org: "Teksolve IT Solutions LLC", years: "Feb. – Aug. 2024", details: "Developed and maintained backend and full-stack applications using Java, JavaScript, Spring Boot, REST APIs, React, and databases." },
+  { role: "Peer Mentor & Data Assistant", org: "University of North Texas · HSCC", years: "2022 – 2024", details: "Mentored middle- and high-school students through outreach activities and supported application development and data analysis." },
+  { role: "Programmer Analyst", org: "Cognizant Technology Solutions", years: "Jan. 2020 – Dec. 2021", details: "Worked on enterprise software and databases, including backend development, API testing with SoapUI, and automation using Groovy." },
+  { role: "Systems Engineer", org: "Raster Technologies", years: "2019", details: "Developed application and automation scripts using Python, SQL, PL/SQL, and AutoLISP, and supported data-processing workflows." },
 ];
 
 const navigation = ["About", "Research", "Publications", "Projects", "Teaching", "Experience", "Contact"];
@@ -205,15 +213,15 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="shell hero-grid">
             <div className="hero-content">
-              <p className="overline"><span className="tiny-dot" /> DOCTORAL RESEARCHER · CYBERSECURITY · AI</p>
-              <h1 id="hero-title">Sai Sri Harsha<br /><em>Chakravarthula.</em></h1>
-              <p className="hero-role">Ph.D. Student in Computer Science &amp; Engineering <span className="hero-role-divider">/</span> University of North Texas</p>
-              <p className="hero-description">I&apos;m pursuing a Ph.D. at the University of North Texas, focusing on cybersecurity in emerging systems. My research covers LLM security, trustworthy AI, secure edge computing, and connected healthcare technologies.</p>
+              <p className="overline"><span className="tiny-dot" /> PH.D. STUDENT · CYBERSECURITY · AI</p>
+              <h1 id="hero-title">Sai Sri Harsha<br /><em>Chakravarthula</em></h1>
+              <p className="hero-role">Ph.D. Student in Computer Science &amp; Engineering <span className="hero-role-divider">·</span> University of North Texas</p>
+              <p className="hero-description">I am a Ph.D. student at the University of North Texas, where I study cybersecurity in emerging systems. My work focuses on the security of large language models, edge AI, and connected healthcare technologies.</p>
               <div className="hero-actions">
                 <a href="#research" className="btn btn-primary">Explore research <ArrowIcon /></a>
                 <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">View my CV <ArrowIcon diagonal /></a>
               </div>
-              <div className="hero-meta"><span>LLM Security</span><span className="meta-separator" /><span>Secure Edge AI</span><span className="meta-separator" /><span>Healthcare AI</span></div>
+              <div className="hero-meta"><span>LLM Security</span><span className="meta-separator" /><span>Edge &amp; IoMT Security</span><span className="meta-separator" /><span>Healthcare AI</span></div>
             </div>
             <div className="portrait-column">
               <div className="portrait-card">
@@ -221,22 +229,22 @@ export default function Home() {
                   <Image className="portrait-image" src="/harsha-profile.webp" width={525} height={711} priority alt="Sai Sri Harsha Chakravarthula smiling in a light gray suit and black tie" />
                   <span className="portrait-corner-badge">UNT <span>·</span> CSE</span>
                 </div>
-                <div className="portrait-caption"><div><span className="portrait-label">DOCTORAL RESEARCHER / TEACHING ASSISTANT</span><strong>Sai Sri Harsha Chakravarthula</strong><small>University of North Texas · Denton, TX</small></div><span className="portrait-star" aria-hidden="true">✳</span></div>
+                <div className="portrait-caption"><div><span className="portrait-label">PH.D. STUDENT · GRADUATE TEACHING ASSISTANT</span><strong>Sai Sri Harsha Chakravarthula</strong><small>University of North Texas · Denton, TX</small></div><span className="portrait-star" aria-hidden="true">✳</span></div>
               </div>
               <div className="portrait-accent" aria-hidden="true"><span>RESEARCH · TEACHING · SERVICE</span><span>DENTON · TEXAS</span></div>
             </div>
           </div>
-          <div className="shell hero-bottom"><span>CYBERSECURITY · TRUSTWORTHY AI · SECURE EDGE SYSTEMS</span><a href="#about">More about me <span aria-hidden="true">↓</span></a></div>
+          <div className="shell hero-bottom"><span>CYBERSECURITY · AI SECURITY · CONNECTED SYSTEMS</span><a href="#about">More about me <span aria-hidden="true">↓</span></a></div>
         </section>
 
         <section className="section about-section" id="about">
           <div className="shell">
-            <SectionHeading number="01" label="ABOUT" title="From healthcare AI to\nsecure intelligent systems." />
+            <SectionHeading number="01" label="ABOUT" title="From healthcare systems to AI security." />
             <div className="about-layout">
               <div className="about-story">
-                <p className="lead">My research brings together cybersecurity, artificial intelligence, and connected systems, especially in healthcare and edge computing.</p>
-                <p>My earlier work focused on smart healthcare devices and AI-based healthcare applications. That experience led me to study how to protect the AI models, data, and devices these systems depend on.</p>
-                <p>Today, I work on LLM output verification, secure edge AI, RAG-based security, and hardware-based authentication. I also enjoy teaching and helping students work through technical problems step by step.</p>
+                <p className="lead">My research combines cybersecurity and artificial intelligence, with an emphasis on connected healthcare and edge devices.</p>
+                <p>I started with smart healthcare devices and AI applications, including fall-detection systems and food–medication interaction screening. These projects led me to explore how to protect AI models, verify their outputs, and secure the devices that run them.</p>
+                <p>My current work includes LLM output verification, security for edge AI, retrieval-augmented generation (RAG) for threat analysis, and hardware-based device authentication. I also support computing courses and enjoy helping students work through problems step by step.</p>
                 <div className="about-links"><a href="mailto:saisriharshachakravarthula@gmail.com">Contact me <ArrowIcon diagonal /></a><a href="https://github.com/chakravarthulaharsha" target="_blank" rel="noopener noreferrer">GitHub profile <ArrowIcon diagonal /></a></div>
               </div>
               <div className="education-panel">
@@ -252,7 +260,7 @@ export default function Home() {
 
         <section className="section section-tinted" id="research">
           <div className="shell">
-            <SectionHeading number="02" label="RESEARCH" title="Research interests and\ncurrent directions." intro="My work focuses on security challenges in AI, edge devices, connected healthcare, and hardware-based authentication." />
+            <SectionHeading number="02" label="RESEARCH" title="Research interests and current work." intro="I study how to protect AI models, verify their outputs, and improve security in edge and connected systems." />
             <div className="research-grid">
               {research.map((area) => <article className="research-card" key={area.number}>
                 <div className="research-top"><span>{area.number} / RESEARCH AREA</span><span className="research-symbol">↗</span></div>
@@ -260,13 +268,13 @@ export default function Home() {
                 <div className="research-tags">{area.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </article>)}
             </div>
-            <div className="research-bottom"><span className="tiny-dot" /><p><strong>Current focus.</strong> Improving the integrity, authentication, and secure deployment of AI and connected systems.</p></div>
+            <div className="research-bottom"><span className="tiny-dot" /><p><strong>Current focus.</strong> Verifying AI outputs, securing edge deployments, and strengthening device authentication.</p></div>
           </div>
         </section>
 
         <section className="section" id="publications">
           <div className="shell">
-            <SectionHeading number="03" label="PUBLICATIONS" title="Peer-reviewed publications." intro="Selected journal and conference papers, with published and accepted work clearly distinguished." />
+            <SectionHeading number="03" label="PUBLICATIONS" title="Publications." intro="Journal and conference papers, organized by publication status." />
             <div className="pub-toolbar"><div className="pub-tabs" role="group" aria-label="Filter publications">
               {(["All", "Published", "Accepted"] as const).map((item) => <button key={item} type="button" aria-pressed={filter === item} className={filter === item ? "pub-tab active" : "pub-tab"} onClick={() => setFilter(item)}>{item}<span>{item === "All" ? publications.length : publications.filter(p => p.status === item).length}</span></button>)}
             </div><span className="pub-note">{visiblePublications.length} {visiblePublications.length === 1 ? "paper" : "papers"} shown</span></div>
@@ -277,13 +285,13 @@ export default function Home() {
                 {pub.link ? <a className="pub-link" href={pub.link} aria-label={`Open paper: ${pub.title}`} target="_blank" rel="noopener noreferrer"><ArrowIcon diagonal /></a> : <span className="pub-unlinked" aria-label="Paper link not yet added">—</span>}
               </article>)}
             </div>
-            <p className="publication-footnote">For my complete publication list, please see my <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer">curriculum vitae <ArrowIcon diagonal /></a>.</p>
+            <p className="publication-footnote">For full citations and additional details, see my <a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer">curriculum vitae <ArrowIcon diagonal /></a>.</p>
           </div>
         </section>
 
         <section className="section section-tinted" id="projects">
           <div className="shell">
-            <SectionHeading number="04" label="SELECTED PROJECTS" title="Projects and ongoing work." intro="Examples of my published and ongoing research in AI, healthcare, and systems security." />
+            <SectionHeading number="04" label="SELECTED PROJECTS" title="Selected research projects." intro="Published projects and ongoing work in AI, healthcare, and cybersecurity." />
             <div className="project-grid">
               {projects.map((project, index) => <article className="project-card" key={project.title}>
                 <div className="project-top"><span>PROJECT / {String(index + 1).padStart(2, "0")}</span><span className="project-status">{project.state}</span></div>
@@ -296,8 +304,8 @@ export default function Home() {
 
         <section className="section" id="teaching">
           <div className="shell">
-            <SectionHeading number="05" label="TEACHING" title="Helping students build\nconfidence in computing." intro="As a teaching assistant, I focus on clear explanations, hands-on practice, and feedback that helps students improve." />
-            <div className="teaching-layout"><div className="teaching-intro"><span className="quote-mark">“</span><p>I want students to understand why something works, feel comfortable asking questions, and learn from mistakes as they practice.</p><div className="teaching-note"><strong>Professional development</strong><span>Completed UNT’s SEED professional development program · Fall 2026</span></div></div>
+            <SectionHeading number="05" label="TEACHING" title="Teaching and student support." intro="As a graduate teaching assistant, I help students learn computing concepts through labs, debugging, office hours, and practical feedback." />
+            <div className="teaching-layout"><div className="teaching-intro"><span className="quote-mark" aria-hidden="true">“</span><p>I want students to understand why their code works, feel comfortable asking questions, and learn from mistakes as they practice.”</p><div className="teaching-note"><strong>Professional development</strong><span>Completed UNT’s SEED professional development program · Fall 2026</span></div></div>
               <div className="course-list">{courses.map(course => <article className="course" key={course.code}><span className="course-code">{course.code}</span><div><h3>{course.name}</h3><p>{course.text}</p></div><span className="course-term">{course.term}</span></article>)}</div>
             </div>
           </div>
@@ -305,15 +313,15 @@ export default function Home() {
 
         <section className="section section-tinted" id="experience">
           <div className="shell">
-            <SectionHeading number="06" label="EXPERIENCE & SERVICE" title="Experience across research,\neducation, and industry." />
+            <SectionHeading number="06" label="EXPERIENCE & SERVICE" title="Research, education, and industry experience." />
             <div className="experience-layout"><div className="experience-list">{experience.map(item => <article className="experience-item" key={item.role}><div className="experience-date">{item.years}</div><div><h3>{item.role}</h3><span>{item.org}</span><p>{item.details}</p></div></article>)}</div>
-              <aside className="service-panel"><p className="panel-title">SERVICE & RECOGNITION</p><h3>Academic service and outreach.</h3><p>Served as a peer reviewer for SN Computer Science (Springer Nature), IFIP IoT, IEEE iSES, IEEE ISVLSI, and OCIT.</p><div className="service-divider" /><p>Mentored students through UNT’s HSCC outreach program and supported undergraduate and graduate computing courses as a teaching assistant.</p><div className="service-divider" /><p>Recognition includes the Mission Critical Award at Cognizant and Employee of the Month through HSCC.</p></aside>
+              <aside className="service-panel"><p className="panel-title">SERVICE & RECOGNITION</p><h3>Academic service and outreach.</h3><p>Served as a peer reviewer for SN Computer Science (Springer Nature), IFIP IoT, IEEE iSES, IEEE ISVLSI, and OCIT.</p><div className="service-divider" /><p>Mentored students through UNT’s HSCC outreach program and supported undergraduate and graduate computing courses as a teaching assistant.</p><div className="service-divider" /><p>Recognition includes the Mission Critical Award and Best Employee Award at Cognizant, and Employee of the Month through HSCC.</p></aside>
             </div>
           </div>
         </section>
 
         <section className="contact-section" id="contact">
-          <div className="shell contact-layout"><div><p className="overline">07 / GET IN TOUCH</p><h2>Let’s connect and<br /><em>collaborate.</em></h2><p>I welcome research collaborations, academic opportunities, and conversations about cybersecurity, AI, and secure computing systems.</p></div>
+          <div className="shell contact-layout"><div><p className="overline">07 / GET IN TOUCH</p><h2>Let’s connect and<br /><em>collaborate.</em></h2><p>I welcome opportunities to collaborate on research, teaching, and projects related to AI and cybersecurity.</p></div>
             <div className="contact-actions"><a className="contact-email" href="mailto:saisriharshachakravarthula@gmail.com">saisriharshachakravarthula@gmail.com <ArrowIcon diagonal /></a><a href="https://github.com/chakravarthulaharsha" target="_blank" rel="noopener noreferrer">GitHub <ArrowIcon diagonal /></a><a href="/Sai_Sri_Harsha_Chakravarthula_CV.pdf" target="_blank" rel="noopener noreferrer">View Curriculum Vitae <ArrowIcon diagonal /></a></div>
           </div>
         </section>
